@@ -1,0 +1,14 @@
+import mongoose from 'mongoose';
+
+const userSchema = new mongoose.Schema(
+  {
+    email: { type: String, required: true, unique: true, trim: true, lowercase: true },
+    password: { type: String, required: true },
+  },
+  { timestamps: true },
+);
+
+const UserModel = mongoose.model("User", userSchema);
+
+export const findUserByEmail = (email: string) => UserModel.findOne({ email });
+export const createUser = (data: { email: string; password: string }) => UserModel.create(data);
