@@ -533,6 +533,7 @@
           }
         },
         "overrides": []
+        
       },
       "options": {
         "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "max"] },
